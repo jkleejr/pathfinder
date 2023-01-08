@@ -16,7 +16,38 @@ public class KeyboardInputManager : InputManager // inherit from inputmanager
         if (Input.GetKey(KeyCode.W)) {
             OnMoveInput?.Invoke(Vector3.forward);
         }
+        if (Input.GetKey(KeyCode.S)) {
+            OnMoveInput?.Invoke(-Vector3.forward);
+        }
+        if (Input.GetKey(KeyCode.A))
+        {
+            OnMoveInput?.Invoke(-Vector3.right);
+        }
+        if (Input.GetKey(KeyCode.D))
+        {
+            OnMoveInput?.Invoke(Vector3.right);
+        }
 
+        // rotate controls, qe
+        if (Input.GetKey(KeyCode.E))
+        {
+            OnRotateInput?.Invoke(1f);
+        }
+        if (Input.GetKey(KeyCode.Q))
+        {
+            OnRotateInput?.Invoke(-1f);
+        }
+
+        // zoom controls, zx
+        if (Input.GetKey(KeyCode.Z))
+        {
+            OnZoomInput?.Invoke(-1f);
+        }
+        if (Input.GetKey(KeyCode.X))
+        {
+            OnZoomInput?.Invoke(1f);
+        }
     }
 }
+
 
